@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - My Tasks</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📝 My Tasks</h1>
+            <p class="subtitle">Sign in to continue</p>
+        </div>
+
+        <!-- Login Form -->
+        <div class="form-box" id="loginForm">
+            <h2>Welcome Back <span id="welcomeName"></span>!</h2>
+            
+            <div id="message"></div>
+
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="loginEmail" required placeholder="your@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="loginPassword" required placeholder="Enter password">
+                </div>
+
+                <div class="form-group checkbox-group">
+                    <input type="checkbox" id="keepSignedIn" checked>
+                    <label for="keepSignedIn">Keep me signed in</label>
+                </div>
+
+                <button type="submit" class="btn-primary">Log In</button>
+            </form>
+
+            <p class="switch-text">
+                Don't have an account? 
+                <a href="#" onclick="showSignup(); return false;">Sign Up</a>
+            </p>
+        </div>
+
+        <!-- Signup Form -->
+        <div class="form-box hidden" id="signupForm">
+            <h2>Create Account</h2>
+            
+            <div id="signupMessage"></div>
+
+            <form onsubmit="handleSignup(event)">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" id="signupName" required placeholder="Your name">
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" id="signupEmail" required placeholder="your@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" id="signupPassword" required minlength="6" placeholder="Min 6 characters">
+                </div>
+
+                <button type="submit" class="btn-primary">Create Account</button>
+            </form>
+
+            <p class="switch-text">
+                Already have an account? 
+                <a href="#" onclick="showLogin(); return false;">Sign In</a>
+            </p>
+        </div>
+
+
+    <script src="auth.js"></script>
+</body>
+</html>
